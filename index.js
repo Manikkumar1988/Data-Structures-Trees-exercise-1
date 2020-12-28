@@ -50,6 +50,25 @@ if(temp.left===null) {
 
   lookup(value){
     //Code here
+    if(this.root === null) {
+      return false
+    } else {
+      let currentNode = this.root
+      while(currentNode!==null) {
+        if(value>currentNode.value) {
+          currentNode = currentNode.right
+        }else if(value<currentNode.value) {
+          currentNode = currentNode.left
+        }
+        else {
+          console.log(currentNode)
+        return currentNode
+        
+        }
+      }
+      return false
+    }
+    
   }
   // remove
 }
@@ -62,6 +81,7 @@ tree.insert(20)
 tree.insert(170)
 tree.insert(15)
 tree.insert(1)
+tree.lookup(1)
 JSON.stringify(traverse(tree.root))
 
 //     9
